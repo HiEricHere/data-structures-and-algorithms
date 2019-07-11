@@ -24,7 +24,7 @@ For example, ['Alphabet', 'Zebra', 'alphabet', 'carrot'] is correctly sorted.
 
 const alphabetize = (arr) => {
   arr.sort( (a,b) => {
-    return a[0].toLowerCase() > b[0].toLowerCase();
+    return a > b;
   });
 };
 
@@ -49,7 +49,17 @@ For example, ['Alphabet', 'alphabet', 'carrot', 'Zebra'] is correctly sorted, an
 ------------------------------------------------------------------------------------------------ */
 
 const alphabetizeBetter = (arr) => {
-  // Solution code here...
+  arr.sort( (a,b) => {
+    let str1 = a.toLowerCase();
+    let str2 = b.toLowerCase();
+    if ( str1 < str2 ) {
+      return -1;
+    } else if ( str1 > str2 ) {
+      return 1;
+    } else if ( str1 === str2 ) {
+      return 0;
+    }
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
