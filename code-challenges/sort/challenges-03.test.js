@@ -76,7 +76,9 @@ Here is an example of the input:
 ------------------------------------------------------------------------------------------------ */
 
 const sortByPrice = (arr) => {
-  // Solution code here...
+  arr.sort( (a,b) => {
+    return a.price > b.price;
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -88,7 +90,11 @@ For example, [1, 14, 0.2, -281, 54782] is only correctly sorted in that order.
 ------------------------------------------------------------------------------------------------ */
 
 const sortNumbersByLength = (arr) => {
-  // Solution code here...
+  arr.sort( (a,b) => {
+    let num1 = a.toString().length;
+    let num2 = b.toString().length;
+    return num1 > num2;
+  });
 };
 
 /*-----------------------------------------------------------------------------------------------
@@ -110,7 +116,9 @@ const people = [
 ];
 
 const sortPeople = (arr) => {
-  // Solution code here...
+  arr.sort( (a,b) => {
+    return a.lastName > b.lastName;
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -124,7 +132,15 @@ If two people have the same full name, the younger one should come first. Do not
 ------------------------------------------------------------------------------------------------ */
 
 const sortPeopleBetter = (arr) => {
-  // Solution code here...
+  arr.sort( (a,b) => {
+    if ( a.lastName === b.lastName && a.firstName === b.firstName ) {
+      return a.age > b.age;
+    } else if ( a.lastName === b.lastName ) {
+      return a.firstName > b.firstName;
+    } else {
+      return a.lastName > b.lastName;
+    }
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
