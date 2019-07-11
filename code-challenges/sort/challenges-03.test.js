@@ -10,6 +10,7 @@ const sortBackwards = (arr) => {
   arr.sort( (a,b) => {
     return b - a;
   });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -23,9 +24,11 @@ For example, ['Alphabet', 'Zebra', 'alphabet', 'carrot'] is correctly sorted.
 ------------------------------------------------------------------------------------------------ */
 
 const alphabetize = (arr) => {
-  arr.sort( (a,b) => {
-    return a > b;
-  });
+  // arr.sort( (a,b) => {
+  //   return a > b;
+  // });
+  // return arr;
+  return arr.sort();
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -38,6 +41,7 @@ const sortByLength = (arr) => {
   arr.sort( (a,b) => {
     return a.length - b.length;
   });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -60,6 +64,7 @@ const alphabetizeBetter = (arr) => {
       return 0;
     }
   });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -79,6 +84,7 @@ const sortByPrice = (arr) => {
   arr.sort( (a,b) => {
     return a.price > b.price;
   });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -91,10 +97,9 @@ For example, [1, 14, 0.2, -281, 54782] is only correctly sorted in that order.
 
 const sortNumbersByLength = (arr) => {
   arr.sort( (a,b) => {
-    let num1 = a.toString().length;
-    let num2 = b.toString().length;
-    return num1 > num2;
+    return a.toString().length > b.toString().length;
   });
+  return arr;
 };
 
 /*-----------------------------------------------------------------------------------------------
@@ -119,6 +124,7 @@ const sortPeople = (arr) => {
   arr.sort( (a,b) => {
     return a.lastName > b.lastName;
   });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -141,6 +147,7 @@ const sortPeopleBetter = (arr) => {
       return a.lastName > b.lastName;
     }
   });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -166,7 +173,20 @@ const meetings = [
 ];
 
 const sortMeetingsByDay = (arr) => {
-  // Solution code here...
+  let dayNum = [
+    {day:'Monday', num:1},
+    {day:'Tuesday',num:2},
+    {day:'Wednesday', num:3},
+    {day:'Thursday', num:4},
+    {day:'Friday', num:5}];
+  dayNum.forEach((dayNumElement) => {
+    arr.forEach((arrElement) => {
+      if (dayNumElement.day === arrElement.dayOfWeek){
+        arrElement.numOfWeek = dayNumElement.num;
+      }
+    });
+  });
+  return arr.sort((a,b) => a.numOfWeek > b.numOfWeek );
 };
 
 /* ------------------------------------------------------------------------------------------------
