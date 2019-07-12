@@ -40,7 +40,13 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 ------------------------------------------------------------------------------------------------ */
 
 const citiesAtoJ = (arr) => {
-  // Solution code here...
+  let filteredArr = [];
+  let regex = /^[A-J]/g;
+  arr.forEach((element) => {
+    let filter = element.match(regex);
+    if(!(filter === null)) filteredArr.push(element);
+  });
+  return filteredArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
