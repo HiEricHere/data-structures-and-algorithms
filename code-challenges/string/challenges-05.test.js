@@ -13,9 +13,15 @@ For example, if the input is 'Welcome', the output will be:
 ['Welcome', 'elcome', 'lcome', 'come', 'ome', 'me', 'e', ''].
 ------------------------------------------------------------------------------------------------ */
 
-const howMuchPencil = (str) => {
+const howMuchPencil = (str) => {  
   let result = [];
-  // Solution code here...
+  let length = str.length;
+  let splitStr = str.split('');
+  for (let i = 0; i < length+1; i++ ){
+    let joinStr = splitStr.join('');
+    result.push(joinStr.slice(0,length));
+    splitStr.shift();
+  }
   return result;
 };
 
