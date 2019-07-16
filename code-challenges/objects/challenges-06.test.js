@@ -71,7 +71,9 @@ let characters = [
 
 const getHouses = (arr) => {
   let houses = [];
-  // Solution code here...
+  arr.forEach( element => {
+    houses.push(element.house);
+  })
   return houses;
 };
 
@@ -88,7 +90,12 @@ hasChildrenValues(characters, 'Sansa') will return false
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenValues = (arr, character) => {
-  // Solution code here...
+  for ( let i = 0; i < arr.length; i++ ){
+    if ( character === arr[i].name ){
+      let values = Object.values(arr[i]);
+      return (values[2].length > 0);
+    }
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
