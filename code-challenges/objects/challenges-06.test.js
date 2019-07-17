@@ -107,7 +107,12 @@ The input and output of this function are the same as the input and output from 
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenEntries = (arr, character) => {
-  // Solution code here...
+  for ( let i = 0; i < arr.length; i++ ){
+    if ( character === arr[i].name ){
+      let entries = Object.entries(arr[i]);
+      return ( entries[2][1].length > 0 );
+    }
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -117,7 +122,13 @@ Write a function named totalCharacters that takes in an array and returns the nu
 ------------------------------------------------------------------------------------------------ */
 
 const totalCharacters = (arr) => {
-  // Solution code here...
+  let characters = 0;
+  arr.forEach ( family => {
+    characters++;
+    if( !(family.spouse === null) )characters++;
+    if( family.children.length ) characters += family.children.length;
+  });
+  return characters;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -132,7 +143,12 @@ For example: [{ house: 'Stark', members: 7 }, { house: 'Arryn', members: 3 }, ..
 
 const houseSize = (arr) => {
   const sizes = [];
-  // Solution code here...
+  arr.forEach ( family => {
+    let familySize = 1;
+    familySize += family.children.length;
+    if ( !(family.spouse === null) ) familySize++;
+    sizes.push( { 'house':family.house, 'members':familySize } );
+  });
   return sizes;
 };
 
@@ -156,7 +172,12 @@ const deceasedSpouses = ['Catelyn', 'Lysa', 'Robert', 'Khal Drogo', 'Alerie'];
 
 const houseSurvivors = (arr) => {
   const survivors = [];
-  // Solution code here...
+  arr.forEach ( family => {
+    let familySize = 1;
+    familySize += family.children.length;
+    if ( !(family.spouse === null) && !(deceasedSpouses.includes(family.spouse) ) ) familySize++;
+    survivors.push( { 'house':family.house, 'members':familySize } );
+  });
   return survivors;
 };
 
