@@ -13,8 +13,7 @@ const courseInfo = { name: 'Code 301', duration: { dayTrack: '4 weeks', eveningT
   finalExam: true };
 
 const getCourseKeys = (obj) => {
-  let keys = Object.keys(obj);
-  return keys;
+  return Object.keys(obj);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -73,7 +72,7 @@ const getHouses = (arr) => {
   let houses = [];
   arr.forEach( element => {
     houses.push(element.house);
-  })
+  });
   return houses;
 };
 
@@ -125,8 +124,8 @@ const totalCharacters = (arr) => {
   let characters = 0;
   arr.forEach ( family => {
     characters++;
-    if( !(family.spouse === null) )characters++;
-    if( family.children.length ) characters += family.children.length;
+    if( !(family.spouse === null) ) characters++;
+    characters += family.children.length;
   });
   return characters;
 };
