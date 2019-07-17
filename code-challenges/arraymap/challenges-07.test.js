@@ -21,7 +21,11 @@ Write a function named forEachTwoToThe that produces the same output as your for
 ------------------------------------------------------------------------------------------------ */
 
 const forEachTwoToThe = (arr) => {
-  // Solution code here...
+  let answer = [];
+  arr.forEach ( value => {
+    answer.push(Math.pow( 2,value ));
+  });
+  return answer;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -31,7 +35,7 @@ Write a function named mapTwoToThe that produces the same output as your forLoop
 ------------------------------------------------------------------------------------------------ */
 
 const mapTwoToThe = (arr) => {
-  // Solution code here...
+  return arr.map( value => Math.pow( 2,value ) );
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -43,9 +47,8 @@ Read the MDN documentation on String.charCodeAt() if necessary.
 
 For example: charCode(['h','i']) returns [104, 105].
 ------------------------------------------------------------------------------------------------ */
-
 const charCode = (arr) => {
-  // Solution code here...
+  return arr.map( value => value.charCodeAt() );
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -59,7 +62,11 @@ For example: evenOdd([1,2,3]) returns ['odd','even','odd'].
 ------------------------------------------------------------------------------------------------ */
 
 const evenOdd = (arr) => {
-  // Solution code here...
+  return arr.map( value => {
+    if ( typeof value === 'string' ) return 'N/A';
+    else if ( value % 2 === 0 ) return 'even';
+    else return 'odd';
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -105,7 +112,7 @@ const snorlaxAbilities = {
 };
 
 const extractAbilities = (arr) => {
-  // Solution code here...
+  return arr.map( object => object.ability.name );
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -152,7 +159,10 @@ const snorlaxStats = {
 };
 
 const extractStats = (arr) => {
-  // Solution code here...
+  return arr.map( object => {
+    let total = object.effort + object.baseStat;
+    return { 'name':object.stat.name, 'total':total }; 
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
