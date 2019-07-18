@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --coverage --verbose code-challenges/arraymap",
+    "test": "jest --coverage --verbose code-challenges/arrayfilter",
     "watch": "jest --watchAll"
   },
   "keywords": [],
