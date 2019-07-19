@@ -71,7 +71,10 @@ let starWarsData = [{
 }];
 
 const returnNames = (arr) => {
-  // Solution code here...
+  return arr.reduce( ( characters,element ) => {
+    characters.push( element.name );
+    return characters;
+  }, [] );
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -83,7 +86,11 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 ------------------------------------------------------------------------------------------------ */
 
 const reversedString = (str) => {
-  // Solution code here...
+  let array = str.split('').reduce( ( array,character,idx ) => {
+    array.unshift(character);
+    return array;
+  }, [] );
+  return array.join('');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -136,7 +143,14 @@ const characters = [
 ];
 
 const countNumberOfChildren = (arr) => {
-  // Solution code here...
+  let children = arr.reduce( ( childCount, family ) => {
+    if( family.children ) {
+      return (childCount += family.children.length);
+    } else {
+      return childCount;
+    }
+  }, 0);
+  return children;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -148,7 +162,10 @@ Hint: The accumulator should begin as { count: 0, sum: 0 }
 ------------------------------------------------------------------------------------------------ */
 
 const calculateAverage = (arr) => {
-  // Solution code here...
+  let total = arr.reduce( ( total, value ) => {
+    return total += value;
+  }, 0);
+  return total / arr.length;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -167,9 +184,11 @@ const isPrime = (value) => {
   }
   return value > 1;
 };
-
 const countPrimeNumbers = (arr) => {
-  // Solution code here...
+  return arr.reduce( ( primeCount, value ) => {
+    if ( isPrime(value) ) return primeCount += 1;
+    else return primeCount;
+  }, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -212,7 +231,16 @@ const snorlaxData = {
 };
 
 const extractStat = (statName, arr) => {
-  // Solution code here...
+  let test = arr.reduce( ( abilityObj, object ) => {
+    if ( object.stat.name === statName ){
+      abilityObj = object;
+      return abilityObj;
+    } else {
+      return abilityObj;
+    }
+  },0);
+  if (test) return test;
+  else return null;
 };
 
 /* ------------------------------------------------------------------------------------------------
