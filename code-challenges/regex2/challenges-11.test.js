@@ -1,5 +1,7 @@
 'use strict';
 
+// import { regExpLiteral } from "@babel/types";
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1
 
@@ -9,7 +11,8 @@ If the PIN is four numerical digits long, return true. Otherwise, return false.
 ------------------------------------------------------------------------------------------------ */
 
 const validatePin = (pin) => {
-  // Solution code here...
+  let regex = /^[\d]{4}$/;
+  return regex.test(pin);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -29,7 +32,8 @@ Note: if you ever need to validate an email using a regex in practice, the Inter
 ------------------------------------------------------------------------------------------------ */
 
 const validateEmail = (email) => {
-  // Solution code here...
+  let regex = /^[a-zA-Z\d]+(\.[a-zA-Z\d]+)?@[a-zA-Z]+\.[a-zA-Z]{3}$/;
+  return regex.test(email);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -54,7 +58,8 @@ Return either true or false.
 ------------------------------------------------------------------------------------------------ */
 
 const validatePhoneNumber = (phoneNumber) => {
-  // Solution code here...
+  let regex = /^(\([\d]{3}\)(\s)?|[\d]{3}(\s|-)?)?[\d]{3}(\s|-)?[\d]{4}$/;
+  return regex.test(phoneNumber);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -67,7 +72,10 @@ findTagNames(['<div><h1>Hello, world!</h1></div>', '<p>Welcome to my site</p>'])
 ------------------------------------------------------------------------------------------------ */
 
 const findTagNames = elements => {
-  // Solution code here...
+  return elements.reduce( ( tags, value ) => {
+    let matches = value.match(/<\/[a-z\d]+>/g).map( element => element.slice( 1,element.length-1 ));
+    return tags.concat(matches);
+  }, []);
 };
 
 /* ------------------------------------------------------------------------------------------------
