@@ -23,8 +23,9 @@ const alkiBeach = [33, 31, 147, 130, 27, 93, 38, 126, 141, 63, 46, 17];
 const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
 const grandTotal = (stores) => {
-  // Solution code here...
-
+  return hoursOpen.map( ( hour, hourIndex ) => {
+    return stores.reduce( ( storeCounter, store ) => storeCounter += store[hourIndex], 0);
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -38,7 +39,10 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 ------------------------------------------------------------------------------------------------ */
 
 const salesData = (hours, data) => {
-  // Solution code here...
+  return hours.map( ( hour, hourIndex ) => {
+    let hourTotal = data.reduce( ( storeCount, store ) => storeCount += store[hourIndex], 0);
+    return { 'sales':`${hourTotal} cookies`, 'time': `${hours[hourIndex]}` };
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -60,7 +64,10 @@ const errands = [
 ];
 
 const howManyTreats = (arr) => {
-  // Solution code here...
+  for ( let i = 0; i < arr.length; i++ ){
+    let treats = arr[i].items.filter( item => (item.name === 'Treats') );
+    if (treats.length) return treats[0].quantity;
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -82,7 +89,7 @@ The top row of the board is considered row zero and row numbers increase as they
 ------------------------------------------------------------------------------------------------ */
 
 const battleship = (board, row, col) => {
-  //  Solution code here...
+  return (board[row][col] === '#' ? 'hit' : 'miss');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -94,7 +101,11 @@ For example, the following input returns a product of 720: [[1,2], [3,4], [5,6]]
 ------------------------------------------------------------------------------------------------ */
 
 const calculateProduct = (numbers) => {
-  // Solution code here...
+  return numbers.reduce( ( arrayTotal, element ) => {
+    if( element.length ){
+      return arrayTotal *= element.reduce( ( elementTotal, num ) => elementTotal *= num, 1);
+    } else return arrayTotal;
+  }, 1);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -114,7 +125,10 @@ const weeklyTemperatures = [
 ];
 
 const averageDailyTemperature = (weather) => {
-  // Solution code here...
+  let totalOverall = weather.reduce( ( currentTotal, week ) => {
+    return currentTotal += week.reduce( ( weekTotal, day ) => weekTotal += day, 0);
+  }, 0);
+  return totalOverall/(weather.length * 7);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -135,7 +149,10 @@ let lowestWeeklyTemperatureData = [
 ];
 
 const lowestWeeklyAverage = (weather) => {
-  // Solution code here...
+  return weather.map( week => {
+    let weekTotal = week.reduce( ( total, day ) => total += day, 0);
+    return weekTotal/week.length;
+  }).sort( (a,b) => a - b )[0];
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -151,7 +168,10 @@ For example, excel('1,1,1\n4,4,4\n9,9,9') returns [3, 12, 27].
 ------------------------------------------------------------------------------------------------ */
 
 const excel = (str) => {
-  // Solution code here...
+  let stringPrep = str.split('\n').map( row => row.split(','));
+  return stringPrep.map( array => {
+    return array.reduce( ( total, value ) => total += parseInt(value,10), 0);
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
