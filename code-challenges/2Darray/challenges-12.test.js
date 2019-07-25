@@ -41,6 +41,7 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 const salesData = (hours, data) => {
   return hours.map( ( hour, hourIndex ) => {
     let hourTotal = data.reduce( ( storeCount, store ) => storeCount += store[hourIndex], 0);
+    console.log( hourTotal );
     return { 'sales':`${hourTotal} cookies`, 'time': `${hours[hourIndex]}` };
   });
 };
