@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --coverage --verbose code-challenges/2Darray",
+    "test": "jest --coverage --verbose code-challenges/string2",
     "watch": "jest --watchAll"
   },
   "keywords": [],
