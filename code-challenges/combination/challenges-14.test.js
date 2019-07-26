@@ -110,7 +110,7 @@ const sortBy = (property, arr) => {
   return arr.sort( (a,b) => {
     if ( a[property] > b[property] ){
       return 1;
-    } else if ( a[property] > b[property] ){
+    } else if ( a[property] < b[property] ){
       return -1;
     } else return 0;
   });
