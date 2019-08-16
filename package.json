@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --coverage --verbose code-challenges/combination",
+    "test": "jest --coverage --verbose 401/code-challenges/arrayReverse",
     "watch": "jest --watchAll"
   },
   "keywords": [],
