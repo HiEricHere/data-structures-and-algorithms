@@ -11,3 +11,4 @@ The function works by using two variables representing the first and last index 
 A for loop runs through the array swapping the values between the two variables and then incrementing the variables closer to each other with each loop. The loop runs for the array length halved.
 
 ## Solution
+![whiteboard](./assets/whiteboard-array-reverse.jpg)
