@@ -4,6 +4,17 @@ const LinkedList = require('../linked-list');
 
 describe('linked-list.js', () => {
 
+  test('insert() successfully creates an empty list', () => {
+    let list = new LinkedList;
+    list.insert();
+    expect(list.head.value).toEqual(undefined);
+    expect(list.head.next).toEqual(null);
+    list.insert(1);
+    expect(list.head.value).toEqual(1);
+    expect(list.head.next.value).toEqual(undefined);
+
+  });
+
   test('insert() successfully creates a new node', () => {
 
     let list = new LinkedList;
