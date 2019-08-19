@@ -40,14 +40,79 @@ class LinkedList{
   toString() {
 
     let currentNode = this.head;
-    let string = '';
+    let array = [];
 
     while ( currentNode !== null ) {
-      string = `${currentNode.value} ${string}`;
+      array.push( currentNode.value );
       currentNode = currentNode.next;
     }
 
-    return string;
+    return array.join(' ');
+
+  }
+
+  append( value ){
+
+    if( this.head === null ){
+      this.head = new Node( value );
+    } else {
+      appendHelper( this.head, value );
+    }
+
+    function appendHelper ( currentNode, value ){
+      if( currentNode.next === null ){
+        let newTail = new Node( value );
+        currentNode.next = newTail;
+        return;
+      } else {
+        currentNode = currentNode.next;
+        appendHelper( currentNode, value );
+      }
+    }
+
+  }
+
+  insertBefore( val, newVal ){
+
+    if( this.head === null){
+      this.head = new Node ( newVal );
+    } else {
+      findVal( this.head, val, newVal );
+    }
+
+    function findVal ( currentNode, val, newVal ){
+      if( currentNode.next.value === val ){
+        let newNode = new Node ( newVal );
+        newNode.next = currentNode.next;
+        currentNode.next = newNode;
+        return;
+      } else {
+        currentNode = currentNode.next;
+        findVal( currentNode, val, newVal );
+      }
+    }
+
+  }
+
+  insertAfter( val, newVal ){
+
+    if( this.head === null){
+      this.head = new Node ( newVal );
+    } else {
+      findVal( this.head, val, newVal );
+    }
+
+    function findVal ( currentNode, val, newVal ){
+      if( currentNode.value === val ){
+        let newNode = new Node( newVal );
+        newNode.next = currentNode.next;
+        currentNode.next = newNode;
+        return;
+      } else {
+        currentNode = currentNode.next;
+        findVal( currentNode, val, newVal );
+      }
+    }
 
   }
 

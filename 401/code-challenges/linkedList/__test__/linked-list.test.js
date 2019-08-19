@@ -52,7 +52,91 @@ describe('linked-list.js', () => {
       list.insert( test );
     });
 
-    expect(list.toString()).toEqual('1 true test null [object Object] () => {} ');
+    expect(list.toString()).toEqual('() => {} [object Object]  test true 1');
+
+  });
+
+  test('insertBefore() can successfully insert a node before a node located in the middle of a linked list', () => {
+
+    let list = new LinkedList;
+    let array = [ 50,40,20,10 ];
+
+    array.forEach( value => {
+      list.insert( value );
+    });
+
+    let target = 40;
+    let newValue = 30;
+
+    list.insertBefore( target, newValue );
+
+    expect(list.toString()).toEqual('10 20 30 40 50');
+
+  });
+
+  test('insertBefore() can successfully insert a node before the first node of a linked list', () => {
+
+    let list = new LinkedList;
+
+    let target = 40;
+    let newValue = 30;
+
+    list.insertBefore( target, newValue );
+
+    expect(list.toString()).toEqual('30');
+
+  });
+
+  test('insertAfter() can successfully insert a node in an empty list', () => {
+
+    let list = new LinkedList;
+
+    list.insertAfter( 10, 20 );
+
+    expect(list.toString()).toEqual('20');
+
+  });
+
+  test('insertAfter() can successfully insert after a node in the middle of the linked list', () => {
+
+    let list = new LinkedList;
+    let array = [ 50,40,20,10 ];
+
+    array.forEach( value => {
+      list.insert( value );
+    });
+
+    let target = 20;
+    let newValue = 30;
+
+    list.insertAfter( target, newValue );
+
+    expect(list.toString()).toEqual('10 20 30 40 50');
+
+  });
+
+  test('append() can successfully insert a node after the last node of the linked list', () => {
+
+    let list = new LinkedList;
+    let array = [ 50,40,30,20,10 ];
+
+    array.forEach( value => {
+      list.insert( value );
+    });
+
+    list.append( 60 );
+
+    expect(list.toString()).toEqual('10 20 30 40 50 60');
+
+  });
+
+  test('append() can successfully insert a node in an empty list', () => {
+
+    let list = new LinkedList;
+
+    list.append( 10 );
+
+    expect(list.toString()).toEqual('10');
 
   });
 
