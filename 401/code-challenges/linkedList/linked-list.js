@@ -113,6 +113,37 @@ class LinkedList{
         findVal( currentNode, val, newVal );
       }
     }
+  }
+
+  countBack( k ){
+
+    if ( k < 0 ) return null;
+
+    let tracer = this.head;
+    let hounds = null;
+    let releaseTheHounds = false;
+    let countdown = k;
+
+    while( tracer !== null ){
+
+      if ( countdown === 0 ){
+        countdown--;
+        hounds = this.head;
+        releaseTheHounds = true;
+      }
+
+      if ( releaseTheHounds && tracer.next !== null ) {
+        tracer = tracer.next;
+        hounds = hounds.next;
+      } else {
+        tracer = tracer.next;
+      }
+
+      if ( countdown > 0 ) countdown--;
+
+    }
+
+    return releaseTheHounds ? hounds.value : null;
 
   }
 

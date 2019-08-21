@@ -140,4 +140,73 @@ describe('linked-list.js', () => {
 
   });
 
+  test('countBack() returns null if given negative input', () => {
+
+    let list = new LinkedList;
+
+    let array = [ 50,40,30,20,10 ];
+
+    array.forEach( value => {
+      list.insert( value );
+    });
+
+    expect(list.countBack(-1)).toEqual(null);
+
+  });
+
+  test('countBack() returns the correct value of a node k nodes from the tail', () => {
+
+    let list = new LinkedList;
+
+    let array = [ 10,9,8,7,6,5,4,3,2,1 ];
+
+    array.forEach( value => {
+      list.insert( value );
+    });
+
+    expect(list.countBack(0)).toEqual(10);
+    expect(list.countBack(5)).toEqual(5);
+    expect(list.countBack(9)).toEqual(1);
+
+  });
+
+  test('countBack() returns null if k > list length', () => {
+
+    let list = new LinkedList;
+
+    let array = [ 5,4,3,2,1 ];
+
+    array.forEach( value => {
+      list.insert( value );
+    });
+
+    expect(list.countBack(10)).toBeNull();
+
+  });
+
+  test('countBack() returns null if k and list length are equal', () => {
+
+    let list = new LinkedList;
+
+    let array = [ 10,9,8,7,6,5,4,3,2,1 ];
+
+    array.forEach( value => {
+      list.insert( value );
+    });
+
+    expect(list.countBack(10)).toEqual(null);
+
+  });
+
+  test('countBack() returns null if list length is 1 and k > 0', () => {
+
+    let list = new LinkedList;
+
+    list.insert( 1 );
+
+    expect(list.countBack(0)).toEqual(1);
+    expect(list.countBack(1)).toEqual(null);
+
+  })
+
 });
