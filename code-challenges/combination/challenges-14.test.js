@@ -152,6 +152,7 @@ Here is a sample board:
 ];
 ------------------------------------------------------------------------------------------------ */
 
+// eslint-disable-next-line no-unused-vars
 const detectTicTacToeWin = (board) => {
   // Solution code here...
 };

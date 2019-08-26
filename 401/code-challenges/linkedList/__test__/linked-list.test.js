@@ -207,6 +207,6 @@ describe('linked-list.js', () => {
     expect(list.countBack(0)).toEqual(1);
     expect(list.countBack(1)).toEqual(null);
 
-  })
+  });
 
 });

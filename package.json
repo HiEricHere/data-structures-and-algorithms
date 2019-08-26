@@ -5,12 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --coverage --verbose 401/code-challenges/stacksAndQueues",
-    "watch": "jest --watchAll"
+    "watch": "jest --watchAll",
+    "lint": "eslint \"**/*.js\""
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "eslint": "^6.2.2",
     "jest": "^24.1.0"
   }
 }

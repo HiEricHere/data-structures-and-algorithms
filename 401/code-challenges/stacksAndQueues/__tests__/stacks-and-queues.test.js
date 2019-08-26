@@ -86,6 +86,7 @@ describe('Stack tests', () => {
 
     array.forEach( value => stack.push( value ) );
 
+    // eslint-disable-next-line no-unused-vars
     array.forEach( value => stack.pop() );
 
     expect(stack.peek()).toEqual(null);
@@ -179,6 +180,7 @@ describe('Queue tests', () => {
 
     array.forEach( value => queue.enqueue( value ) );
 
+    // eslint-disable-next-line no-unused-vars
     array.forEach( value => queue.dequeue());
 
     expect(queue.peek()).toEqual(null);
