@@ -13,7 +13,7 @@ For example, if the input is 'Welcome', the output will be:
 ['Welcome', 'elcome', 'lcome', 'come', 'ome', 'me', 'e', ''].
 ------------------------------------------------------------------------------------------------ */
 
-const howMuchPencil = (str) => {  
+const howMuchPencil = (str) => {
   let result = [];
   let length = str.length;
   for (let i = 0; i < length+1; i++ ){
@@ -119,7 +119,7 @@ Return a new array containing just the verbs. For example, ['Mix until evenly di
 
 const stepActions = (recipe) => {
   let result = [];
-  
+
   for ( let i = 0; i < recipe.steps.length; i++ ){
     let arrayIt = recipe.steps[i].split(' ');
     result.push(arrayIt[0]);
