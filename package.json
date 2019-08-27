@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --coverage --verbose 401/code-challenges/tictactoe",
+    "test": "jest --coverage --verbose 401/code-challenges/",
     "watch": "jest --watchAll",
     "lint": "eslint \"**/*.js\""
   },
