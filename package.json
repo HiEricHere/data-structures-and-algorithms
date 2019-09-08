@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --coverage --verbose 401/code-challenges/",
+    "test": "jest --coverage --verbose 401/code-challenges/findPathLength",
     "watch": "jest --watchAll",
     "lint": "eslint \"**/*.js\""
   },
