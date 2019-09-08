@@ -1,12 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="173529ae-6d9d-410a-be92-68f7a7a34b34" name="Default Changelist" comment="" />
+    <list default="true" id="173529ae-6d9d-410a-be92-68f7a7a34b34" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/__tests__/findPathLength.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/__tests__/findPathLength.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/findPathLength.js" beforeDir="false" afterPath="$PROJECT_DIR$/findPathLength.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
@@ -14,8 +28,9 @@
   <component name="ProjectId" id="1QWv4i6Q5TslvCzcJt4ofSQJW8d" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.General" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.HTML" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -29,6 +44,20 @@
       </list>
     </option>
   </component>
+  <component name="RunManager" selected="Node.js.findPathLength.js">
+    <configuration name="findPathLength.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="findPathLength.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+    <configuration name="findPathLength.test.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="findPathLength.test.js" working-dir="$PROJECT_DIR$/__tests__">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.findPathLength.js" />
+        <item itemvalue="Node.js.findPathLength.test.js" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -39,7 +68,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1567898976908</updated>
-      <workItem from="1567898978116" duration="3032000" />
+      <workItem from="1567898978116" duration="12601000" />
     </task>
     <servers />
   </component>
