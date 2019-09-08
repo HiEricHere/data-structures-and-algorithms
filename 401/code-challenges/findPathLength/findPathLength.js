@@ -1,5 +1,4 @@
 'use strict';
-const Node = require('./node');
 
 function findPathLength ( node, parent, child ) {
 

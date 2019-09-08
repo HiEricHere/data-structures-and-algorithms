@@ -2,7 +2,6 @@
 
 const Node = require('../node');
 const findPathLength = require('../findPathLength').findPathLength;
-const findChildLength = require('../findPathLength').findChildLength;
 
 const ten = new Node ( 10 );
 const seven = new Node ( 7 );
@@ -35,12 +34,11 @@ describe ( 'Finds the path length from parent node to child node', () => {
 
     expect(findPathLength( ten, 5, 20 )).toEqual(2);
 
-  })
+  });
 
 });
 
 const findDistanceTail = require('../findPathLengthTail').findDistanceTail;
-const findChildDistanceTail = require('../findPathLengthTail').findChildDistanceTail;
 
 describe ( 'Finds the path length from parent node to child node - tail method', () => {
 
