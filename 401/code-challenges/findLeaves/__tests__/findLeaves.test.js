@@ -1,5 +1,6 @@
 'use strict';
 
+const findLeavesRecursive = require('../findLeavesRecursive');
 const findLeaves = require('../findLeaves');
 const TreeNodes = require('../treenode');
 const List = require('../list');
@@ -64,6 +65,10 @@ describe( 'Finds all the leaves in a tree', () => {
     expect(test.remove(50).value).toEqual(50);
     expect(test.remove(40).value).toEqual(40);
 
+  });
+
+  test( 'Returns all leaves in a tree recursively: tail', () => {
+    expect(findLeavesRecursive(one)).toEqual('8 7 12 11 9');
   });
 
 });
